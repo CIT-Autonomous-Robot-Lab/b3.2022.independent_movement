@@ -1,11 +1,11 @@
 # 本ページでは
 このページではraspicat2で作業するときに必要となる情報をまとめます。(slackだと一覧性が著しく悪いため)
 
-# raspicatの基本情報
+# RasPiCatの基本情報
 
-|  |初代raspicat|2代目raspicat|
+|  |初代RasPiCat|2代目RasPiCat|
 |---| ------------- | ------------- |
-|raspberrypi|4B 4GB|4B 4GB |
+|RaspberryPi|4B 4GB|4B 4GB |
 |Lider|VLP-16|UTM-30LX|
 |認識距離|100m|30m(最大は60m)|
 |視野角|水平360° 垂直30°|270°|
@@ -81,7 +81,15 @@
 
 参考:https://www.indoorcorgielec.com/resources/raspberry-pi/raspberry-pi-ssh/
 
-
+# VLP-16の自動接続設定
+VLP-16は初期設定を完了しても、コンピュータを再起動すると再度コマンドで接続させる必要があります。このコマンドを起動時に自動で実行してくれるようにします。
+```
+git clone https://github.com/YuwaAoki/velodyne_setup_scripts.git
+```
+`cd velodyne_setup_scripts`  
+`chmod +x setup.sh`  
+`./setup.sh`  
+この後ifconfigで確認し、接続されていれば完了です。
 
 
 
