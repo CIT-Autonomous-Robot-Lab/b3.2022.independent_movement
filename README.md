@@ -14,6 +14,13 @@
 |製品HP|https://www.argocorp.com/cam/special/Velodyne/VLP-16.html|https://www.hokuyo-aut.co.jp/search/single.php?serial=21|
 
 # SSDのマウント設定
+
+`cd /mnt/ssd`
+
+で***ルートディレクトリ直下***のmntファイルにアクセスできる
+
+ssdの中身が見れてるか確認
+
    Raspberry Pi 4B
 1.    `sudo fdisk -l`(SSDの場所が/dev/sda1と分かる)
 2. `sudo mkdir /mnt/SSD`
