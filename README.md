@@ -109,7 +109,7 @@ nmcli connection modify vlp-16 ipv4.routes "192.168.0.201"
 ```
 
 これで完了です。再起動で自動的に接続されます。  
-vlp-16の初期設定は以下を参考に完了しているものとします。  
+VLP-16の初期設定は以下を参考に完了しているものとします。  
 http://wiki.ros.org/velodyne/Tutorials/Getting%20Started%20with%20the%20Velodyne%20VLP16
 
 
