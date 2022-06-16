@@ -91,7 +91,7 @@ ssdの中身が見れてるか確認
 # VLP-16の自動接続設定
 VLP-16は初期設定を完了しても、コンピュータを再起動すると再度コマンドで接続させる必要があります。この手間を解消します。  
 ここで紹介する方法では、NetworkManagerコマンドラインインターフェースを用います。  
-まず、vlp-16用の接続プロファイルを新規作成します。  
+まず、VLP-16用の接続プロファイルを新規作成します。  
 ```
 sudo nmcli connection add type ethernet ifname eth0 con-name vlp-16 autoconnect yes ipv6.method ignore
 ```
@@ -99,11 +99,11 @@ ipv4アドレスを手動に設定します。
 ```
 sudo nmcli connection modify vlp-16 ipv4.method manual
 ```
-vlp-16にipアドレスを割り当てます。  
+VLP-16にipアドレスを割り当てます。  
 ```
 nmcli connection modify vlp-16 ipv4.address "192.168.0.100/24"
 ```
-vlp-16のプロファイルに静的ルートを設定します。
+VLP-16のプロファイルに静的ルートを設定します。
 ```
 nmcli connection modify vlp-16 ipv4.routes "192.168.0.201"
 ```
