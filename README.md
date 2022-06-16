@@ -21,10 +21,10 @@
 
 ssdの中身が見れてるか確認
 
-   Raspberry Pi 4B
+   ~~Raspberry Pi 4B
 1.    `sudo fdisk -l`(SSDの場所が/dev/sda1と分かる)
 2. `sudo mkdir /mnt/SSD`
-3. `sudo mount -o uid=1000,gid=1000 /dev/sda1 /mnt/SSD`
+3. `sudo mount -o uid=1000,gid=1000 /dev/sda1 /mnt/SSD`~~
 4. `df -T`でマウント確認
 5. 外すときは
    
