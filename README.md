@@ -49,22 +49,27 @@ ssdの中身が見れてるか確認
 4.`sudo umount /mnt/SSD`
 
 # 更新後rosbag取得
-Ubuntu
+Raspberry Pi 4B (launch立ち上げ)
 1. `roslaunch raspicat_bringup raspicat_bringup.launch urg:=true joy:=true`
 2. `rostopic list`
 
-PCから無線操作するなら
+無線操作するならPC上で
 1. `roslaunch raspicat_gamepad_controller logicool.launch`
 
-Ubuntu
-1. `rosbag record -O test.bag /cmd_vel /odom /scan /tf /tf_static`
+Raspberry Pi 4B　(/mnt/ssd/test.bag取得)
+1. `cd /mnt/ssd`
+2. `rosbag record -O test.bag /cmd_vel /odom /scan /tf /tf_static`
     (全データ取得するなら`rosbag record -O test.bag -a`)
-2. `rosbag info test.bag`
+3. `rosbag info test.bag`
 
 PCから無線ファイル編集
 1. `sftp ubuntu@192.168.12.1`
 2. `get /mnt/ssd/test.bag`
 3. `bye`
+
+# 更新後gmappingマップ作成
+1. `roslaunch raspicat_slam raspicat_gmapping.launch rosbag:=true rosbag_rate:=1.0 rosbag_filename:=$HOME/map/test.bag`
+   `rosbag_rate:=`でデータを回す速度調整
 
 ### ノートpc側で確認したいとき
 
