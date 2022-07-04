@@ -44,7 +44,7 @@ Raspberry Pi 4B　(/mnt/ssd/test.bag取得)
     (全データ取得するなら`rosbag record -O test.bag -a`)
 3. `rosbag info test.bag`
 
-PCから無線ファイル編集
+PCから無線でファイル取り出し
 1. `sftp ubuntu@192.168.12.1`
 2. `get /mnt/ssd/test.bag`
 3. `bye`
