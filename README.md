@@ -46,8 +46,26 @@ ssdの中身が見れてるか確認
    `rosbag record -j -O 建物の名前.bag /cmd_vel /odom /scan /tf /tf_static`(圧縮)
 
    
-4.`sudo umonunt /mnt/SSD`
+4.`sudo umount /mnt/SSD`
 
+# 更新後rosbag取得
+1. Ubuntu
+`roslaunch raspicat_bringup raspicat_bringup.launch urg:=true joy:=true`
+`rostopic list`
+
+2. PCから無線操作
+`roslaunch raspicat_gamepad_controller logicool.launch`
+
+3.Ubuntu
+`rosbag record -O test.bag /cmd_vel /odom /scan /tf /tf_static`
+`rosbag record -O test.bag -a`
+`rosbag info test.bag`
+`sudo umount /mnt/ssd`
+
+4.pcから無線ファイル編集
+sftp ubuntu@192.168.12.1
+get /mnt/ssd/test.bag
+bye
 
 ### ノートpc側で確認したいとき
 
