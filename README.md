@@ -67,7 +67,8 @@ PCから無線ファイル編集
 2. `get /mnt/ssd/test.bag`
 3. `bye`
 
-# 更新後gmappingマップ作成
+# 更新後マップ作成
+
 1. `roslaunch raspicat_slam raspicat_gmapping.launch rosbag:=true rosbag_rate:=1.0 rosbag_filename:=$HOME/map/test.bag`
    `rosbag_rate:=`でデータを回す速度調整
 
