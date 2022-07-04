@@ -48,6 +48,9 @@ ssdの中身が見れてるか確認
    
 4.`sudo umount /mnt/SSD`
 
+### ノートpc側で確認したいとき
+`roslaunch raspicat_slam_navigation slam_remote_pc.launch`
+
 # 更新後rosbag取得
 Raspberry Pi 4B (launch立ち上げ)
 1. `roslaunch raspicat_bringup raspicat_bringup.launch urg:=true joy:=true`
@@ -71,11 +74,6 @@ PCから無線ファイル編集
 gmapping
 1. `roslaunch raspicat_slam raspicat_gmapping.launch rosbag:=true rosbag_rate:=1.0 rosbag_filename:=$HOME/map/test.bag`
    `rosbag_rate:=`でデータを回す速度調整
-
-### ノートpc側で確認したいとき
-
-
-`roslaunch raspicat_slam_navigation slam_remote_pc.launch`
 
 
 # .bagをRvizで再生する
