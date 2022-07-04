@@ -29,28 +29,7 @@ ssdの中身が見れてるか確認
 5. 外すときは
    
    `sudo umonunt /mnt/SSD`
-
-# rosbagを用いたmapping
-1.Raspberry Pi 4B 
-
-    roslaunch raspicat_navigation raspicat_bringup.launch urg_ether:=false urg_usb:=true waypoint_navigation:=false urg_serial_port:=/dev/ttyACM0 
-
-2.Joystick controllerを接続している方   
-
-    roslaunch raspicat_gamepad_controller logicool.launch
-
-3.***Rspberry Pi側の /mnt/SSD***   
-
-    rosbag record -O 建物の名前.bag /cmd_vel /odom /scan /tf /tf_static
-
-   `rosbag record -j -O 建物の名前.bag /cmd_vel /odom /scan /tf /tf_static`(圧縮)
-
    
-4.`sudo umount /mnt/SSD`
-
-### ノートpc側で確認したいとき
-`roslaunch raspicat_slam_navigation slam_remote_pc.launch`
-
 # 更新後rosbag取得
 Raspberry Pi 4B (launch立ち上げ)
 1. `roslaunch raspicat_bringup raspicat_bringup.launch urg:=true joy:=true`
@@ -75,6 +54,26 @@ Gmapping
 1. `roslaunch raspicat_slam raspicat_gmapping.launch rosbag:=true rosbag_rate:=1.0 rosbag_filename:=$HOME/map/test.bag`
    `rosbag_rate:=`でデータを回す速度調整
 
+# rosbagを用いたmapping
+1.Raspberry Pi 4B 
+
+    roslaunch raspicat_navigation raspicat_bringup.launch urg_ether:=false urg_usb:=true waypoint_navigation:=false urg_serial_port:=/dev/ttyACM0 
+
+2.Joystick controllerを接続している方   
+
+    roslaunch raspicat_gamepad_controller logicool.launch
+
+3.***Rspberry Pi側の /mnt/SSD***   
+
+    rosbag record -O 建物の名前.bag /cmd_vel /odom /scan /tf /tf_static
+
+   `rosbag record -j -O 建物の名前.bag /cmd_vel /odom /scan /tf /tf_static`(圧縮)
+
+   
+4.`sudo umount /mnt/SSD`
+
+### ノートpc側で確認したいとき
+`roslaunch raspicat_slam_navigation slam_remote_pc.launch`
 
 # .bagをRvizで再生する
 1.  `rosbag　decompress　~.bag`(解凍)
